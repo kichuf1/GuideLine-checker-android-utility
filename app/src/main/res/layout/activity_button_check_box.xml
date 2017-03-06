@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_check_box"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="comguess.example.android.vlabs.CheckBox">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2mm"
+        android:text="checkbox1"
+        />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBox1"
+        android:text="checkbox2"
+        android:layout_marginTop="2mm"
+        android:onClick="alertBox"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:id="@+id/default_btn"
+            android:layout_below="@+id/checkBox2"
+            android:text="default"
+            android:layout_marginTop="50dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:textColor="#ffffff"
+            android:background="@drawable/corner"
+            android:onClick="alertBox"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:id="@+id/flatbutton"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/corner"
+        android:layout_below="@+id/default_btn"
+        android:layout_marginTop="2mm"
+        android:textColor="#ffffff"
+        android:text="Flat Button"
+        android:onClick="alertBox"
+        />
+
+</RelativeLayout>
+    </RelativeLayout>

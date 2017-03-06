@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+        <item android:title="Guideline1">
+            <menu>
+                <item
+                    android:id="@+id/search"
+                    android:title="Search"
+                    android:icon="@android:drawable/ic_menu_search"/>
+                <item
+                    android:id="@+id/checkbox"
+                    android:title="CheckBox"
+                    android:icon="@android:drawable/checkbox_on_background"/>
+                <item
+                    android:id="@+id/undo"
+                    android:title="Undo"
+                    android:icon="@drawable/ic_undo_black_24dp"/>
+                <item
+                    android:id="@+id/scanner"
+                    android:title="scanner"
+                    android:icon="@drawable/ic_undo_black_24dp"/>
+                <item
+                    android:id="@+id/Gps"
+                    android:title="Gps"
+                    android:icon="@drawable/ic_undo_black_24dp"/>
+                <item
+                    android:id="@+id/VoiceSearch"
+                    android:title="VoiceSearch"
+                    android:icon="@drawable/ic_undo_black_24dp"/>
+                <item
+                    android:id="@+id/DateTimePicker"
+                    android:title="DateTimePicker"
+                    android:icon="@drawable/ic_undo_black_24dp"/>
+
+            </menu>
+        </item>
+        <item android:title="Guideline2">
+
+            <menu>
+                <item
+                    android:id="@+id/wifi"
+                    android:title="3G_wifi" />
+                <item
+                    android:id="@+id/carousel"
+                    android:title="carousel" />
+
+            </menu>
+        </item>
+
+    </group>
+    <group>
+        <item android:title="Share">
+                <item
+                    android:id="@+id/share"
+                    android:title="share"
+                    android:icon="@android:drawable/ic_menu_share"/>
+                <item
+                    android:id="@+id/camera"
+                    android:title="camara"
+                    android:icon="@android:drawable/ic_menu_send"/>
+        </item>
+    </group>
+</menu>

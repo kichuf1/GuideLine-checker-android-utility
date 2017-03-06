@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_user__sign_up"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="comguess.example.android.vlabs.SignUp">
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/nameLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:errorEnabled="true">
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/user_name"
+            android:inputType="text"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textColor="#000000"
+            android:textColorHint="#d3d3d3" />
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/passwordLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:errorEnabled="true"
+        android:layout_below="@+id/nameLayout"
+        app:passwordToggleEnabled="true">
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/User_password"
+            android:inputType="textPassword"
+            android:drawableRight="@drawable/eye_con"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textColor="#000000"
+            android:textColorHint="#d3d3d3"
+            />
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mobilenumber"
+        app:errorEnabled="true"
+        android:layout_below="@+id/passwordLayout"
+        app:passwordToggleEnabled="true">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/User_mobile"
+            android:inputType="number"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textColor="#000000"
+            android:textColorHint="#d3d3d3"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/submit"
+        android:text="Submit"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dropDown"
+        android:dropDownWidth="wrap_content"
+        android:entries="@array/country_list"
+        android:layout_below="@+id/mobilenumber"
+        android:layout_alignParentStart="true">
+    </Spinner>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint = "@string/pin"
+        android:inputType="number"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:textColor="#000000"
+        android:textColorHint="#d3d3d3"
+        android:layout_below="@+id/dropDown"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="46dp"
+        android:id="@+id/pin" />
+
+</RelativeLayout>

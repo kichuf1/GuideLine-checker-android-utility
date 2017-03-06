@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="comguess.example.android.vlabs">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <activity android:name="com.twitter.sdk.android.core.identity.OAuthActivity" />
+
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".LandingPage"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoginPage"
+            android:label="@string/login"
+            android:parentActivityName=".HomePage" />
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="5288c1c55eff23eac28e26202eded338c4c92434" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/app_id" />
+
+        <activity
+            android:name=".HomePage"
+            android:label="@string/home"
+            android:parentActivityName=".HomePage" />
+        <activity
+            android:name=".SignUp"
+            android:label="@string/signUp"
+            android:parentActivityName=".HomePage" />
+        <activity
+            android:name=".BarcodeScanner"
+            android:label="Scanner"
+            android:parentActivityName=".HomePage" />
+        <activity
+            android:name=".VoiceRecognition"
+            android:label="VoiceRecognition"
+            android:parentActivityName=".HomePage" />
+        <activity
+            android:name=".Gpsfinder"
+            android:label="Gps"
+            android:parentActivityName=".HomePage" />
+        <activity
+            android:name=".SearchWithScrollable"
+            android:label="@string/search"
+            android:parentActivityName=".HomePage" />
+        <activity android:name=".CheckBox" />
+        <activity
+            android:name=".Undo"
+            android:parentActivityName=".HomePage" />
+        <activity
+            android:name=".DateTimePicker"
+            android:parentActivityName=".HomePage" />
+        <activity
+            android:name=".activity.IconTabsActivity"
+            android:parentActivityName=".HomePage" />
+        <activity
+            android:name=".activity.IconTextTabsActivity"
+            android:parentActivityName=".HomePage" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:parentActivityName=".HomePage" />
+        <activity
+            android:name=".activity.ScrollableTabsActivity"
+            android:parentActivityName=".HomePage" />
+        <activity
+            android:name=".activity.CustomViewIconTextTabsActivity"
+            android:parentActivityName=".HomePage" />
+        <activity
+            android:name=".Internet"
+            android:parentActivityName=".HomePage" />
+        <activity
+            android:name=".activity.SimpleTabsActivity"
+            android:parentActivityName=".HomePage" />
+        <activity
+            android:name=".Carousel"
+            android:parentActivityName=".HomePage" />
+        <activity android:name=".Authentication" />
+
+        <receiver android:name=".VlabsAppWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/vlabs_app_widget_info" />
+        </receiver>
+    </application>
+
+</manifest>
