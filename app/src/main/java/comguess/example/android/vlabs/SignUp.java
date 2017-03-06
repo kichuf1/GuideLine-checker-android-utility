@@ -11,9 +11,16 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.HashMap;
 
 public class SignUp extends AppCompatActivity {
     Database_Helper mydb;
@@ -22,8 +29,12 @@ public class SignUp extends AppCompatActivity {
     public static final String Name = "nameKey";
     public static final String pass = "pass";
     SharedPreferences sharedpreferences;
-    EditText name, userpass,pin;        Drawable dr;
+    EditText name,userpass,pin;        Drawable dr;
     boolean v_name=false;
+    public HashMap<String,String> map = new HashMap<>();
+    Spinner dropDown;
+    String code;
+    TextView CC;
 
 
     @Override
@@ -35,11 +46,38 @@ public class SignUp extends AppCompatActivity {
         submit.setVisibility(View.INVISIBLE);
         name = (EditText)findViewById(R.id.name);
         userpass = (EditText)findViewById(R.id.password);
+        CC = (TextView)findViewById(R.id.CC);
         pin = (EditText)findViewById(R.id.pin);
+        dropDown = (Spinner) findViewById(R.id.dropDown);
         mydb.demoData();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
          sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         dr = getResources().getDrawable(R.drawable.tickmark);
+        map.put("Greece","+30");
+        map.put("India","+91");
+        map.put("United Kingdom","+44");
+        map.put("France","+33");
+        map.put("Turkey","+90");
+        map.put("Poland","+48");
+        map.put("Germany","+49");
+        map.put("Italy","+39");
+        dropDown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
+                                       long arg3) {
+                //do something here
+                String country=dropDown.getSelectedItem().toString();
+
+                if(map.containsKey(country)){
+                    code=map.get(country);
+                }
+                CC.setText(code);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {
+                //optionally do something here
+            }
+        });
         name.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -48,12 +86,16 @@ public class SignUp extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+
+
                 name.setCompoundDrawables(null,null,null,null);
             }
 
             @Override
             public void afterTextChanged(Editable s) {
                 v_name = true;
+
                 name.setCompoundDrawables(null,null,null,null);
             }
         });
@@ -145,6 +187,7 @@ public class SignUp extends AppCompatActivity {
             submit.setVisibility(View.VISIBLE);
         }
     }
+
 
     /**
      * Created by vleadvlabs on 27/2/17.
